@@ -1,0 +1,13 @@
+dbt_project:  
+  target: dev  
+  outputs:  
+    dev:  
+      type: bigquery  
+      method: service-account # oauth  # or service-account  
+      project: ecstatic-night-457507-v7 # your-gcp-project-id  
+      dataset: dbt_project  # Default dataset  
+      location: US  # or EU, etc.  
+      threads: 4    # Parallelism  
+      timeout_seconds: 300  
+      # For service-account auth:  
+      keyfile: /home/gcpavril/dbt-user-creds.json.json  
