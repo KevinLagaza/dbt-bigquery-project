@@ -1,0 +1,37 @@
+
+version: 2
+
+models:
+  - name: analyze_titanic_data
+    description: "Perform some tests on the titanic data"
+    columns:
+      - name: Age
+        description: Age
+        data_tests:
+          - unique
+          - not_null
+      - name: mean_fare
+        description: Mean of the Fare column
+        data_tests:
+          - not_null
+  - name: sum_analyze_titanic_data
+    description: "Sum of the two columns mentionned above"
+    columns:
+      - name: sum_age
+        description: Sum of the Age
+        data_tests:
+          - not_null
+      - name: sum_mean_fare
+        description: Sum of the Mean of the Fare
+        data_tests:
+          - not_null
+
+sources:
+  - name: dbt_project
+    database: ecstatic-night-457507-v7 # project id
+    schema: dbt_project # dataset name
+    tables:
+      - name: titanic_data
+        description: "The titanic data available in Cloud Storage"
+        
+
