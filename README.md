@@ -1,8 +1,16 @@
 # dbt-bigquery-project
 
 This project is intended to get an understanding of the powerful combination of dbt and BigQuery!
+
+ ## Run the project locally
+
+ ### Setup astro
+ - Install astro via the following command: `curl -sSL install.astronomer.io | sudo bash -s`
+ - Move to the astro folder
+ - Initialize the project: `astro dev init`
+ - Start Airflow by running: `astro dev start`
  
- ### Create a virtual environment (Make sure that pip is installed in your CLI)
+ ### Create a virtual environment (Make sure that pip is installed )
  
  - python3 -m venv name_of_env
  - source name_of_env/bin/activate
