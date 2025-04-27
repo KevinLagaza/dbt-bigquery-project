@@ -1,3 +1,15 @@
-name: 'dbt_project'
-profile: 'dbt_project'
+name: 'dbt_bigquery_titanic_data_pipeline'
+profile: 'dbt_bigquery_data_pipeline'
 version: "0.1.0"
+
+# model-paths: ["dbt/models"]
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:         # directories to be removed by `dbt clean`
+  - "target"
+  - "dbt_packages"

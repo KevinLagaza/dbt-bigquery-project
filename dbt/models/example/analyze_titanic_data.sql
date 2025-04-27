@@ -1,5 +1,11 @@
 
-{{ config(materialized='table') }}
+{{ 
+    config(
+        materialized='table',
+        labels = {"team": "analytics"}
+    ) 
+
+}}
 
     select 
         `Age`,

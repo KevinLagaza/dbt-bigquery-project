@@ -1,13 +1,16 @@
-dbt_project:  
-  target: dev  
-  outputs:  
-    dev:  
-      type: bigquery  
-      method: service-account # oauth  # or service-account  
-      project: ecstatic-night-457507-v7 # your-gcp-project-id  
-      dataset: dbt_project  # Default dataset  
-      location: US  # or EU, etc.  
-      threads: 4    # Parallelism  
-      timeout_seconds: 300  
-      # For service-account auth:  
-      keyfile: /home/gcpavril/dbt-user-creds.json.json  
+dbt_bigquery_data_pipeline:
+  outputs:
+    dev:
+      dataset: dbt_project
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      location: US
+      method: service-account
+      priority: interactive
+      project: ecstatic-night-457507-v7
+      threads: 4
+      type: bigquery
+      # For service account auth:
+      keyfile: /usr/local/airflow/dbt/service_account.json
+  target: dev
+
